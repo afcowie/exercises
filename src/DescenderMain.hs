@@ -6,7 +6,9 @@ module Main where
 import Control.Monad (forM_)
 import Core.Program
 import Core.System
-import System.Directory (listDirectory, doesDirectoryExist)
+import System.Directory (listDirectory)
+
+import Problem2 (program2)
 
 main :: IO ()
 main = execute program2
@@ -20,20 +22,3 @@ program1 = do
     files <- liftIO (listDirectory ".")
     forM_ files $ \file -> do
         writeS file
-
-program2 :: Program None ()
-program2 = descend "."
-  where
-    descend start = do
-        -- list the files in the given directory
-        files <- liftIO (listDirectory start)
-
-        -- loop over each file. If it is a directory, descend recursively.
-        -- Otherwise, print the path.
-        forM_ files $ \file -> do
-            let path = start ++ "/" ++ file
-            probe <- liftIO (doesDirectoryExist path)
-            if probe
-                then descend path
-                else writeS path
-
