@@ -10,9 +10,10 @@ import System.Directory (listDirectory)
 
 import Problem1 (program1)
 import Problem2 (program2)
+import Problem3 (program3)
 
 main :: IO ()
-main = execute program2
+main = execute program3
 
 program0 :: Program None ()
 program0 = do
