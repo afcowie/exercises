@@ -1,6 +1,6 @@
-name: hello
+name: teaching
 version: '0.1.1'
-synopsis: Hello
+synopsis: Code examples derived when studying Haskell
 author: Andrew Cowie <andrew@operationaldynamics.com>
 maintainer: Andrew Cowie <andrew@operationaldynamics.com>
 copyright: © 2017-2020 Operational Dynamics, and Others
@@ -16,10 +16,10 @@ dependencies:
   - core-program >= 0.2.4
 
 executables:
-  hello:
+  descender:
     source-dirs:
       - src
-    main: HelloMain.hs
+    main: DescenderMain.hs
     ghc-options: -threaded
 
 tests:
