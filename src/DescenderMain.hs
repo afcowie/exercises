@@ -3,10 +3,7 @@
 
 module Main where
 
-import Control.Monad (forM_)
 import Core.Program
-import Core.System
-import System.Directory (listDirectory)
 
 import Problem1 (program1)
 import Problem2 (program2)
